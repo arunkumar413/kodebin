@@ -1,0 +1,28 @@
+.box> form{
+  display: grid;
+  grid-template-columns: 70%;
+  grid-row-gap: 5px;
+  box-shadow: 2px 2px 2px 5px whitesmoke;
+}
+
+.w3-bar::before{
+  content: none !important;
+}
+
+.w3-bar::after{
+  content: none !important;
+}
+
+.line span{
+  display: block;
+}
+
+.post{
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.line_and_code  pre{
+display: inline-block;
+}
+

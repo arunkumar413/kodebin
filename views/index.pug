@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css") 
+	body
+		div.w3-bar.w3-blue.w3-margin-left.w3-margin-bottom.w3-margin-top
+			a(class='w3-bar-item w3-hover-amber w3-button' href='/') Codebin
+			a(class='w3-bar-item w3-hover-amber w3-button w3-right' href='https://paypal.me/arunkumar413') Donate
+		div(class='box w3-margin-left w3-container')
+			form(action = "/", method = "POST")
+				input(type="text" placeholder='Enter your name' name='poster')
+				select(name="language")
+					each val in languages
+						option(value=val) #{val}
+				textarea(name="code" rows='15' placeholder='Enter the text/code')
+				button.w3-round-large.w3-btn.w3-green(type="submit") Submit
+		p(style='font-style:italic') NOTE: This tool is intented for short-term storage and sharing of code/text snippets with other deverlopers for help and guidance. Please ensure that there isn't any sensitive information such as passwords, API keys, env variables, etc in the code before posting.
+		div.w3-bar.w3-blue.w3-margin-left.w3-margin-bottom.w3-margin-top This tool is created by Arun Kumar Contact: arunkumar413@gmail.com 
+			

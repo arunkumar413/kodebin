@@ -1,0 +1,20 @@
+#!/usr/bin/nodejs
+var debug = require('debug')('my-application');
+var app = require('../app');
+require('dotenv').config();
+
+
+console.log(process.env.PORT);
+const mongoose = require('mongoose');
+mongoose.connect(`mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0-3b8wy.mongodb.net/codebin?retryWrites=true`, {useNewUrlParser: true});
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function() {
+app.set('port', process.env.PORT);
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+});
+

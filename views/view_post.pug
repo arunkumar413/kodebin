@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title Codebin
+		script(src='/javascripts/prism.js')
+		link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css") 
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/prism.css')
+	body
+		div.w3-bar.w3-blue.w3-margin-left.w3-margin-bottom.w3-margin-top
+			a(class='w3-bar-item w3-hover-amber w3-button' href='/') Codebin
+			a(class='w3-bar-item w3-hover-amber w3-button w3-right' href='https://paypal.me/arunkumar413') Donate
+		div(class='box post w3-margin-left w3-container')
+			p Author: #{doc.author}
+			p Language: #{doc.language}
+			div.line_and_code
+				pre.line-numbers
+					-var c = "language-" + doc.language.toLowerCase();
+					code(class= c)
+						!=highlighted_code
+		div.w3-bar.w3-blue.w3-margin-left.w3-margin-bottom.w3-margin-top This tool is created by Arun Kumar Contact: arunkumar413@gmail.com 
+
