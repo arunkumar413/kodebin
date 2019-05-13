@@ -2,8 +2,6 @@
 var debug = require('debug')('my-application');
 var app = require('../app');
 require('dotenv').config();
-
-
 console.log(process.env.PORT);
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0-3b8wy.mongodb.net/codebin?retryWrites=true`, {useNewUrlParser: true});

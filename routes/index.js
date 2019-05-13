@@ -194,10 +194,10 @@ router.post('/', function(req,res){
  // res.json(req.body);
   console.log(req.body);
   var doc = new Post({ author: req.body.poster, language: req.body.language, code: req.body.code });
-  console.log(doc);
+  // console.log(doc);
    doc.save(function (err, doc) {
     if (err) return console.error(err);
-    console.log(doc + " saved to bin collection.");
+   // console.log(doc + " saved to bin collection.");
     res.redirect('/'+doc._id);
   }); 
 })
@@ -207,11 +207,11 @@ router.get('/:id',function(req,res){
   Post.findById(req.params.id, function (err, doc) {
     if (err) return console.error(err);
   var lines=doc.code.split(/\r\n|\r|\n/).length;
-  console.log(lines);
+  // console.log(lines);
     // res.render("view_post", {doc,lines});
-    console.log(doc);
+    // console.log(doc);
    highlighted_code = highlight(doc.code,doc.language.toLowerCase());
-   console.log(highlighted_code);
+   // console.log(highlighted_code);
    var pug_code =  htmlPugConverter(highlighted_code, { tabs: true,fragment:true})
   res.render("view_post", {doc, highlighted_code});
 
